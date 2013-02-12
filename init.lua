@@ -41,6 +41,7 @@ shifty.config.guess_name = true
 shifty.config.guess_position = true
 shifty.config.remember_index = true
 shifty.config.sloppy = true
+shifty.config.debug = false
 shifty.config.default_name = "new"
 shifty.config.clientkeys = {}
 shifty.config.globalkeys = nil
@@ -56,6 +57,7 @@ shifty.config.prompt_matchers = {
     ":",
     ""
 }
+require("shifty.log")
 
 local matchp = ""
 local index_cache = {}

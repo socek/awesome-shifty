@@ -4,6 +4,10 @@ local naughty = require("naughty")
 -- @param message The text message.
 -- @param log_level 1 = INFO, 2 = WARN, 3 = ERROR, if nothting is provided 1 is used.
 function log(message, log_level)
+  if shifty.config.debug == false then
+    return false
+  end
+
   if log_level == nil then
     log_level = 1
   end
