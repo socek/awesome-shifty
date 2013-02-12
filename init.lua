@@ -29,7 +29,9 @@ local capi = {
     timer = timer
 }
 
-shifty = {}
+local log = require("shifty.log")
+
+local shifty = {}
 
 -- variables
 shifty.config = {}
@@ -57,7 +59,6 @@ shifty.config.prompt_matchers = {
     ":",
     ""
 }
-require("shifty.log")
 
 local matchp = ""
 local index_cache = {}
@@ -1007,7 +1008,10 @@ end
 --init : search config.tags for initial set of
 --tags to open
 function shifty.init()
+  log.enable(shifty.config.debug)
+  log.log("Initializing")
   local numscr = capi.screen.count()
+  log.log(tostring(numscr) .. " screens found")
 
   local screens = {}
   for s = 1, capi.screen.count() do
