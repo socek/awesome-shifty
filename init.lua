@@ -28,9 +28,8 @@ local capi = {
     root = root,
     timer = timer
 }
-require("shifty.log")
 
-local shifty = {}
+shifty = {}
 
 -- variables
 shifty.config = {}
