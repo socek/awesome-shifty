@@ -234,15 +234,17 @@ function shifty.tagtoscr(scr, t)
   return otag
 end
 
---set : set a tags properties
+--- set : set a tags properties
 --@param t: the tag
 --@param args : a table of optional (?) tag properties
 --@return t - the tag object
 function set(t, args)
   if not t then
+    log.log("No tag provided, returning", 3)
     return
   end
   if not args then
+    log.log("No tag properties provided", 2)
     args = {}
   end
 
@@ -250,18 +252,22 @@ function set(t, args)
   t.name = args.name or t.name
 
   -- attempt to load preset on initial run
-  local preset = (awful.tag.getproperty(t, "initial") and
-  shifty.config.tags[t.name]) or {}
+  local preset = (awful.tag.getproperty(t, "initial") and shifty.config.tags[t.name]) or {}
 
+  -- TODO: This is just plain silly, what's the point on setting the var with all those  vars, if you have to check it later ?
   -- pick screen and get its tag table
   local scr = args.screen or (not awful.tag.getscreen(t) and awful.tag.getscreen(preset)) or awful.tag.getscreen(t) or capi.mouse.screen
 
+  -- FIXME: This var never gets used
   local clientstomove = nil
   if scr > capi.screen.count() then
+    loh.log("Somehow the picked screen is of bigger value than the number os existent screens", 3)
     scr = capi.screen.count()
   end
   if awful.tag.getscreen(t) and scr ~= awful.tag.getscreen(t) then
+    log.log("Moving that to screen".. scr.to_s, 1)
     shifty.tagtoscr(scr, t)
+    -- TODO: Why do we need to do this after we move to screen ? This needs to be looked at. Why should be nil its a mistery even.
     awful.tag.setscreen(t, nil)
   end
   local tags = awful.tag.gettags(scr)
@@ -269,9 +275,11 @@ function set(t, args)
   -- try to guess position from the name
   local guessed_position = nil
   if not (args.position or preset.position) and shifty.config.guess_position then
+    log.log("No tag position provided, trying to guess", 2)
     local num = t.name:find('^[1-9]')
     if num then
       guessed_position = tonumber(t.name:sub(1, 1))
+      log.log("Using guessed position " .. guessed_position)
     end
   end
 
@@ -461,10 +469,11 @@ function shift_prev()
   set(awful.tag.selected(), {rel_index = -1})
 end
 
---add : adds a tag
+--- Creates a new tag
 --@param args: table of optional arguments
 function shifty.add(args)
   if not args then
+    log.log("No args were provided on tag creation")
     args = {}
   end
   local name = args.name or " "
