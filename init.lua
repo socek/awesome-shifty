@@ -1246,9 +1246,11 @@ end
 function getlayout(name)
   for _, layout in ipairs(shifty.config.layouts) do
     if awful.layout.getname(layout) == name then
+      log.log("Found " .. layout .. " layout", 1)
       return layout
     end
   end
+  log.log("No layout found.", 3)
 end
 
 -- add signals before using them
