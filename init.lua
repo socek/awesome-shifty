@@ -92,14 +92,19 @@ function name2tag(name, scr, idx)
   end
 end
 
---tag2index: finds index of a tag object
+--- finds index of a tag object
 -- @param scr : screen number to look for tag on
 -- @param tag : the tag object to find
 -- @return the index [or zero] or end of the list
 function tag2index(scr, tag)
+  log.log("Looking for tag " .. tag.name .. " on screen " .. scr, 1)
   for i, t in ipairs(awful.tag.gettags(scr)) do
-    if t == tag then return i end
+    if t == tag then
+      log.log("Found index" .. i .. "for the " .. t.name .. " tag.", 1)
+      return i
+    end
   end
+  log.log("No tag index found for the " .. tag.name .. " tag!", 2)
 end
 
 --rename
