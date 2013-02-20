@@ -55,4 +55,12 @@ function tag.getNmaster()
   return nmaster
 end
 
+function tag.setNcol(value)
+  ncol = value
+end
+
+function tag.getNcol()
+  return ncol
+end
+
 return tag={}
