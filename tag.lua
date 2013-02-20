@@ -47,4 +47,12 @@ function tag.getMwfact()
   return mwfact
 end
 
+function tag.setNmaster(value)
+  nmaster = value
+end
+
+function tag.getNmaster()
+  return nmaster
+end
+
 return tag={}
