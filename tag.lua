@@ -63,4 +63,12 @@ function tag.getNcol()
   return ncol
 end
 
+function tag.setExclusive(value)
+  exclusive = value
+end
+
+function tag.getExclusive()
+  return exclusive
+end
+
 return tag={}
