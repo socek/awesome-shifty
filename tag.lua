@@ -119,4 +119,12 @@ function tag.getIconOnly()
   return icon_only
 end
 
+function tag.setInit(value)
+  init = value
+end
+
+function tag.getInit()
+  return init
+end
+
 return tag={}
