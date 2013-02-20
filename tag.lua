@@ -39,4 +39,12 @@ function tag.getLayout()
   return layout
 end
 
+function tag.setMwfact(value)
+  mwfact = value
+end
+
+function tag.getMwfact()
+  return mwfact
+end
+
 return tag={}
