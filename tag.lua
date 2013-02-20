@@ -31,4 +31,12 @@ function tag.getName()
   return name
 end
 
+function tag.setLayout(value)
+  layout = value
+end
+
+function tag.getLayout()
+  return layout
+end
+
 return tag={}
