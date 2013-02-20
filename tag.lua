@@ -79,4 +79,12 @@ function tag.getPersist()
   return persist
 end
 
+function tag.setNopopup(value)
+  nopopup = value
+end
+
+function tag.getNopopup()
+  return nopopup
+end
+
 return tag={}
