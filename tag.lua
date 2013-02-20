@@ -87,4 +87,12 @@ function tag.getNopopup()
   return nopopup
 end
 
+function tag.setLeaveKills(value)
+  leave_kills = value
+end
+
+function tag.getLeaveKills()
+  return leave_kills
+end
+
 return tag={}
