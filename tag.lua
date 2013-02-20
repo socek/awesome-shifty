@@ -111,4 +111,12 @@ function tag.getIcon()
   return icon
 end
 
+function tag.setIconOnly(value)
+  icon_only = value
+end
+
+function tag.getIconOnly()
+  return icon_only
+end
+
 return tag={}
