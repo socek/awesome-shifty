@@ -95,4 +95,12 @@ function tag.getLeaveKills()
   return leave_kills
 end
 
+function tag.setPosition(value)
+  position = value
+end
+
+function tag.getPosition()
+  return position
+end
+
 return tag={}
