@@ -71,4 +71,12 @@ function tag.getExclusive()
   return exclusive
 end
 
+function tag.setPersist(value)
+  persist = value
+end
+
+function tag.getPersist()
+  return persist
+end
+
 return tag={}
