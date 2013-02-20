@@ -103,4 +103,12 @@ function tag.getPosition()
   return position
 end
 
+function tag.setIcon(value)
+  icon = value
+end
+
+function tag.getIcon()
+  return icon
+end
+
 return tag={}
