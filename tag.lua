@@ -135,4 +135,12 @@ function tag.getSweepDelay()
   return sweep_delay
 end
 
+function tag.setKeys(value)
+  keys = value
+end
+
+function tag.getKeys()
+  return keys
+end
+
 return tag={}
