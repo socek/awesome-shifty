@@ -151,4 +151,12 @@ function tag.getOverloadKeys()
   return overload_keys
 end
 
+function tag.setIndex(value)
+  index = value
+end
+
+function tag.getIndex()
+  return index
+end
+
 return tag={}
