@@ -167,4 +167,12 @@ function tag.getRelIndex()
   return rel_index
 end
 
+function tag.setSpawn(value)
+  spawn = value
+end
+
+function tag.getSpawn()
+  return spawn
+end
+
 return tag={}
