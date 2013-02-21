@@ -127,4 +127,12 @@ function tag.getInit()
   return init
 end
 
+function tag.setSweepDelay(value)
+  sweep_delay = value
+end
+
+function tag.getSweepDelay()
+  return sweep_delay
+end
+
 return tag={}
