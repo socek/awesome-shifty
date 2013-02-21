@@ -175,4 +175,12 @@ function tag.getSpawn()
   return spawn
 end
 
+function tag.setScreen(value)
+  screen = value
+end
+
+function tag.getScreen()
+  return screen
+end
+
 return tag={}
