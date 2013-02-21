@@ -159,4 +159,12 @@ function tag.getIndex()
   return index
 end
 
+function tag.setRelIndex(value)
+  rel_index = value
+end
+
+function tag.getRelIndex()
+  return rel_index
+end
+
 return tag={}
