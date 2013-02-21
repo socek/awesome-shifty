@@ -183,4 +183,12 @@ function tag.getScreen()
   return screen
 end
 
+function tag.setMaxClients(value)
+  max_clients = value
+end
+
+function tag.getMaxClients()
+  return max_clients
+end
+
 return tag={}
