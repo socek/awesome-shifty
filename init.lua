@@ -270,7 +270,7 @@ function set(t, args)
     scr = capi.screen.count()
   end
   if awful.tag.getscreen(t) and scr ~= awful.tag.getscreen(t) then
-    log.log("Moving that to screen".. scr.to_s, 1)
+    log.log("Moving that to screen".. scr, 1)
     shifty.tagtoscr(scr, t)
     -- TODO: Why do we need to do this after we move to screen ? This needs to be looked at. Why should be nil its a mistery even.
     awful.tag.setscreen(t, nil)
