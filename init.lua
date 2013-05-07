@@ -933,9 +933,8 @@ function sweep()
             end
           end
         end
-      else
-        awful.tag.setproperty(t, "used", true)
       end
+        awful.tag.setproperty(t, "used", true)
       if t.selected then
         awful.tag.setproperty(t, "visited", true)
       end
